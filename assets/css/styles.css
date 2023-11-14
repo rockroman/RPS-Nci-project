@@ -1,0 +1,78 @@
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "header" "sub-wrapper";
+}
+
+.sub-wrapper {
+  min-width: 80vw;
+  height: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: 50px auto auto;
+  grid-template-areas: "title" "card" "small-cards";
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 150%;
+}
+
+.header {
+  background-color: #999;
+}
+
+.header {
+  grid-area: header;
+}
+
+.card {
+  grid-area: card;
+  display: flex;
+  width: 70%;
+  margin: auto;
+}
+.card > * {
+  padding: 0.5rem;
+}
+@media (max-width: 500px) {
+  .card {
+    flex-direction: column;
+  }
+}
+
+.small-cards {
+  background: white;
+  padding: 0;
+  grid-area: small-cards;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+@media (max-width: 500px) {
+  .small-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sub-wrapper {
+  grid-area: sub-wrapper;
+}
+
+.small-card {
+  background-color: #999;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* game styles */
+
+.small-cards {
+  cursor: pointer;
+}
